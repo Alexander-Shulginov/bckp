@@ -1,0 +1,87 @@
+.footer {
+    border-top: 1px solid $color-border;
+    padding: 48px 30px;
+
+    @media (max-width: 768px) {
+        padding: 24px 10px;
+    }
+
+    &__container {
+        max-width: 1380px;
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 20px;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: 1fr 1fr;
+            row-gap: 36px;
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__info {
+        font-size: 13px;
+        a {
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+        }
+    }
+
+    &__logo {
+        margin-bottom: 8px;
+    }
+
+    &__questions {
+        margin-bottom: 16px;
+    }
+
+    &__info-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__copy {
+        color: #757575;
+        font-size: 13px;
+        font-weight: 300;
+
+        max-width: 314px;
+        margin-left: auto;
+        padding-right: 80px;
+
+        @media (max-width: 1120px) {
+            padding-right: 0;
+        }
+
+        @media (max-width: 1024px) {
+            margin-left: unset;
+            max-width: unset;
+        }
+    }
+
+    &__banks {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 10px;
+        column-gap: 15px;
+
+        @media (max-width: 1024px) {
+            justify-items: center;
+        }
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+    }
+
+    &__bank-logo {
+        object-fit: contain;
+    }
+}

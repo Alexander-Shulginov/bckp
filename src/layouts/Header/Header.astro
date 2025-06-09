@@ -1,0 +1,38 @@
+---
+import './Header.scss';
+import Logo from '@/components/ui/Logo/Logo.astro';
+import '@/components/ui/Button/Button.scss';
+---
+
+<header class="header header--gradient">
+    <div class="header__container">
+        <Logo />
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__item">
+                    <a href="/how" class="header__link">Как это работает</a>
+                </li>
+                <li class="header__item">
+                    <a href="/brands" class="header__link">Бренды</a>
+                </li>
+                <li class="header__item">
+                    <a href="/about" class="header__link">О нас</a>
+                </li>
+                <li class="header__item">
+                    <a href="/faq" class="header__link">FAQ</a>
+                </li>
+                <li class="header__item">
+                    <a href="/contacts" class="header__link">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header__btns">
+            <a href="/" class="btn btn--black">Оформить заказ</a>
+            <a href="/" class="btn btn--transparent">
+                <div class="header__user">ДА</div>
+                <img src="img/Header/user-default.webp" alt="User default icon" width="26" height="26" />
+                <span>Личный кабинет</span>
+            </a>
+        </div>
+    </div>
+</header>

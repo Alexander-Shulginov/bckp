@@ -1,0 +1,15 @@
+@mixin font-face($font-family, $file-path, $weight: normal) {
+    @font-face {
+        font-family: $font-family;
+        font-weight: $weight;
+        font-display: swap;
+        src: local($font-family), url('#{$file-path}.woff2') format('woff2'), url('#{$file-path}.woff') format('woff');
+    }
+}
+
+@include font-face('Neue', '../fonts/Neue/neue-regular', 400);
+
+@include font-face('SF', '../fonts/SF/sfpro-light', 300);
+@include font-face('SF', '../fonts/SF/sfpro-regular', 400);
+@include font-face('SF', '../fonts/SF/sfpro-medium', 500);
+@include font-face('SF', '../fonts/SF/sfpro-bold', 700);

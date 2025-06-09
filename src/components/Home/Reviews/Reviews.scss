@@ -1,0 +1,191 @@
+.reviews {
+    margin-bottom: 220px;
+
+    &__container {
+        max-width: 1060px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    @media (max-width: 1024px) {
+        margin-bottom: 150px;
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 96px;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+        position: relative;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__content {
+        @media (max-width: 1024px) {
+            order: 2;
+        }
+    }
+
+    &__wrap {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: 1024px) {
+            flex-direction: column-reverse;
+            gap: 20px;
+        }
+    }
+
+    &__author {
+        font-family: $second-font;
+        font-size: 20px;
+        line-height: 1.2;
+
+        margin-bottom: 17px;
+
+        display: flex;
+        gap: 8px;
+
+        @media (max-width: 1024px) {
+            order: 0;
+        }
+    }
+
+    &__date {
+        color: #8a8a8a;
+    }
+
+    &__text {
+        font-size: 17px;
+        line-height: 1.4;
+        letter-spacing: 0.045em;
+
+        @media (max-width: 768px) {
+            font-size: 15px;
+        }
+    }
+
+    &__nav {
+        margin-top: auto;
+
+        svg {
+            width: 18px;
+            height: 12px;
+        }
+    }
+
+    &__arrows {
+        margin-top: 6px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__photo {
+        width: 100%;
+        height: 100%;
+
+        @media (max-width: 475px) {
+            border: 5px solid #dbdbdb;
+            border-radius: 30px;
+            width: 75%;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &__delivery {
+        position: absolute;
+        bottom: -35px;
+        right: -60px;
+        z-index: 2;
+
+        background-color: $color-accent-btn;
+        font-size: 20px;
+        font-family: $second-font;
+
+        padding: 21px 61px 21px 21px;
+        transform: rotate(-3.5deg);
+        clip-path: polygon(0 0, calc(100% - 38px) 0, 100% 50%, calc(100% - 38px) 100%, 0 100%);
+
+
+        @media (max-width: 1278px) {
+            right: 32px;
+        }
+
+        @media (max-width: 1024px) {
+            display: none;
+        }
+    }
+
+    .swiper-button-next {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        font-size: 20px;
+        font-family: $second-font;
+
+        padding: 6px;
+
+        @media (any-hover: hover) {
+            &:hover {
+                path {
+                    fill: $color-accent;
+                }
+            }
+        }
+    }
+
+    .swiper-button-prev {
+        padding: 6px;
+
+        @media (any-hover: hover) {
+            &:hover {
+                path {
+                    fill: $color-accent;
+                }
+            }
+        }
+    }
+}
+.swiper {
+    width: 100%;
+}
+
+.swiper-pagination,
+.swiper-button-next,
+.swiper-button-prev {
+    position: static !important;
+    width: unset !important;
+    height: unset !important;
+    margin-top: unset !important;
+
+    color: #c7c7c7 !important;
+
+    transition: hover 0.2s ease-in-out !important;
+
+    @media (any-hover: hover) {
+        &:hover {
+            color: $color-accent !important;
+        }
+    }
+}
+
+.swiper-pagination-progressbar {
+    background-color: #c7c7c7 !important;
+    height: 1px !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    content: '' !important;
+}
