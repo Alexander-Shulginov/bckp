@@ -5,7 +5,7 @@
         margin-bottom: 50px;
     }
 
-    @media (max-width: 768px){
+    @media (max-width: 768px) {
         margin-bottom: 0;
     }
 
@@ -34,13 +34,19 @@
         }
     }
 
-    &__elem:nth-child(even) {
-        @media (max-width: 1240px){
+    &__elem:nth-child(3),
+    &__elem:nth-child(4) {
+        @media (min-width: 1240px) {
             flex-direction: row-reverse;
-            
+        }
+    }
+
+    &__elem:nth-child(even) {
+        @media (max-width: 1240px) {
+            flex-direction: row-reverse;
         }
 
-        @media (max-width: 768px){
+        @media (max-width: 768px) {
             flex-direction: column-reverse;
         }
     }

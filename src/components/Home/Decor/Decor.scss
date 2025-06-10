@@ -96,6 +96,13 @@
 
     &__item {
         flex-shrink: 0;
+        cursor: pointer;
+        transition: color 0.2s ease-in-out;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $color-accent;
+            }
+        }
     }
 
     &__more {

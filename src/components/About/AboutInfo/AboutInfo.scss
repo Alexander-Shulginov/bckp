@@ -64,7 +64,7 @@
         }
 
         @media (max-width: 768px) {
-            gap: 0;
+            gap: 24px;
             margin-bottom: 48px;
         }
     }
@@ -72,6 +72,13 @@
     &__item {
         border-top: 1px solid $color-border;
         padding-top: 10px;
+    }
+
+    &__item:last-child {
+        display: none;
+        @media (max-width: 1024px){
+            display: block;
+        }
     }
 
     &__item--offset {
