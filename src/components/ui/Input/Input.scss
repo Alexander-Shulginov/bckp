@@ -1,0 +1,43 @@
+.input-base {
+    label {
+        font-size: 14px;
+        line-height: 1.2;
+
+        display: block;
+        padding-bottom: 8px;
+    }
+
+    input,
+    textarea {
+        border: 1px solid #dbdbdb;
+        outline: none;
+        width: 100%;
+        padding: 8px;
+
+        font-size: 14px;
+        line-height: 1.2;
+
+        transition: border-color 0.2s ease-in-out;
+
+        &::placeholder {
+            font-size: inherit;
+            line-height: inherit;
+            color: #8a8a8a;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                border-color: #353638;
+            }
+        }
+    }
+
+    textarea {
+        resize: none;
+        min-height: 66px;
+    }
+}
+
+.input-base--error {
+    border-color: #f35151;
+}

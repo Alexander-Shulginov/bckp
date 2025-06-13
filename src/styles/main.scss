@@ -20,6 +20,11 @@ main {
     flex-grow: 2;
 }
 
+dialog::backdrop,
+dialog::-webkit-backdrop {
+    background-color: rgb(53, 54, 56, 0.8);
+}
+
 .container {
     max-width: 1315px;
     margin: 0 auto;

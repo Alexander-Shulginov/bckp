@@ -1,5 +1,5 @@
 ---
-import SearchInput from '../ui/SearchInput/SearchInput.astro';
+import SearchInput from '@/components/ui/SearchInput/SearchInput.astro';
 import './Questions.scss';
 ---
 
@@ -502,7 +502,7 @@ import './Questions.scss';
                 </div>
             </div>
             <div class="faq__column">
-                <button type="button" class="faq__btn btn btn--accent">Задать свой вопрос</button>
+                <button type="button" id="faq-dialog-open" class="faq__btn btn btn--accent">Задать свой вопрос</button>
                 <nav class="faq__menu">
                     <div class="faq__menu-title">
                         <span>Содержание</span>
