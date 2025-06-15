@@ -12,7 +12,7 @@ import './BrandsSearch.scss';
             </div>
             <div class="search__alphabet">
                 <div class="search__alphabet-wrap">
-                    <button class="search__alphabet-btn" type="button">A</button>
+                    <button class="search__alphabet-btn search__alphabet-btn--active" type="button">A</button>
                     <button class="search__alphabet-btn" type="button">B</button>
                     <button class="search__alphabet-btn" type="button">C</button>
                     <button class="search__alphabet-btn" type="button">D</button>
@@ -35,7 +35,7 @@ import './BrandsSearch.scss';
                     <button class="search__alphabet-btn" type="button">U</button>
                     <button class="search__alphabet-btn" type="button">V</button>
                     <button class="search__alphabet-btn" type="button">W</button>
-                    <button class="search__alphabet-btn" type="button">X</button>
+                    <button class="search__alphabet-btn search__alphabet-btn--disabled" type="button">X</button>
                     <button class="search__alphabet-btn" type="button">Y</button>
                     <button class="search__alphabet-btn" type="button">Z</button>
                 </div>
@@ -61,6 +61,52 @@ import './BrandsSearch.scss';
                         <div class="search__item">Arket</div>
                     </div>
                 </div>
+
+                <div class="search__elem">
+                    <div class="search__char">A</div>
+                    <div class="search__items">
+                        <div class="search__column">
+                            <div class="search__item">Acne studios</div>
+                            <div class="search__item">Add</div>
+                            <div class="search__item">Adidas</div>
+                        </div>
+                        <div class="search__column">
+                            <div class="search__item">Adolfo dominguez</div>
+                            <div class="search__item">Agatha ruiz de la prada</div>
+                            <div class="search__item">Antony morato</div>
+                        </div>
+                        <div class="search__column">
+                            <div class="search__item">Arket</div>
+                            <div class="search__item">Armani</div>
+                            <div class="search__item">Axel arigato</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search__elem">
+                    <div class="search__char">B</div>
+                    <div class="search__items">
+                        <div class="search__column">
+                            <div class="search__item">Balenciaga</div>
+                            <div class="search__item">Balmain</div>
+                            <div class="search__item">Beppi</div>
+                            <div class="search__item">Bershka</div>
+                            <div class="search__item">Bikkembergs</div>
+                        </div>
+                        <div class="search__column">
+                            <div class="search__item">Bimba y lola</div>
+                            <div class="search__item">Birkenstock</div>
+                            <div class="search__item">Boboli</div>
+                            <div class="search__item">Bottega veneta</div>
+                        </div>
+                        <div class="search__column">
+                            <div class="search__item">Braccialini</div>
+                            <div class="search__item">Brunello cucinelli</div>
+                            <div class="search__item">Burberry</div>
+                            <div class="search__item">Byredo</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -72,6 +118,7 @@ import './BrandsSearch.scss';
             display: grid;
             grid-template-columns: 2fr 305px;
             column-gap: 20px;
+            padding-bottom: 36px;
 
             @media (max-width: 1024px) {
                 grid-template-columns: 1fr;
@@ -104,10 +151,15 @@ import './BrandsSearch.scss';
             gap: 40px;
             overflow: hidden;
 
+            position: sticky;
+            top: 15px;
+
             transform: translateY(23px);
 
             @media (max-width: 1024px) {
                 transform: unset;
+                position: static;
+                margin-bottom: 24px;
             }
 
             @media (max-width: 768px) {
@@ -141,6 +193,14 @@ import './BrandsSearch.scss';
             cursor: pointer;
         }
 
+        &__alphabet-btn--active {
+            font-weight: 700;
+        }
+
+        &__alphabet-btn--disabled {
+            color: #9e9e9e;
+        }
+
         &__alphabet-text {
             font-weight: 300;
             font-size: 15px;
@@ -148,6 +208,27 @@ import './BrandsSearch.scss';
         }
 
         &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+
+            transform: translateY(-42px);
+
+            @media (max-width: 1024px){
+                transform: unset;
+            }
+
+            @media (max-width: 768px) {
+                gap: 48px;
+            }
+        }
+
+        &__char {
+            font-family: $second-font;
+            font-size: 90px;
+            line-height: 1.1;
+
+            margin-bottom: 36px;
         }
 
         &__items {
@@ -157,6 +238,10 @@ import './BrandsSearch.scss';
             gap: 12px;
             padding-bottom: 36px;
             border-bottom: 1px solid #dbdbdb;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
         }
 
         &__column {
