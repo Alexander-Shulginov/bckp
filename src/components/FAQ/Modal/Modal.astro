@@ -3,7 +3,7 @@ import './Modal.scss';
 import '@/components/ui/Input/Input.scss';
 ---
 
-<dialog id="faq-dialog" class="question" open>
+<dialog id="faq-dialog" class="question">
     <div class="question__top">
         <button class="question__close" id="faq-dialog-close">
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,10 +38,11 @@ import '@/components/ui/Input/Input.scss';
                 </div>
             </div>
         </div>
-        <div class="input-base">
+        <div class="input-base input-base--error">
             <label for="user-message">Сообщение</label>
             <textarea name="user-textarea" id="user-message"></textarea>
         </div>
+        <p class="question__error question__error--active">Заполните всю необходимую информацию</p>
         <div class="question__policy">
             <input class="question__policy-checkbox" type="checkbox" name="policy" id="policy-rules" />
             <label class="question__policy-text" for="policy-rules">
@@ -57,6 +58,15 @@ import '@/components/ui/Input/Input.scss';
     </form>
 </dialog>
 
+<div class="question__confirm">
+    <p class="question__confirm-text">Ваш вопрос отправлен</p>
+    <button class="question__confirm-btn" type="button" aria-label="Close tip">
+        <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.25 0.75L6.5 6M6.5 6L11.75 11.25M6.5 6L11.75 0.75M6.5 6L1.25 11.25" stroke="white" stroke-width="1.3"></path>
+        </svg>
+    </button>
+</div>
+
 <script>
     const dialogElem = document.getElementById('faq-dialog');
     const dialogOpenBtn = document.getElementById('faq-dialog-open');
@@ -66,6 +76,7 @@ import '@/components/ui/Input/Input.scss';
         dialogOpenBtn.addEventListener('click', () => {
             // @ts-ignore
             dialogElem.showModal();
+            document.body.style.overflow = 'hidden';
         });
     }
 
@@ -73,13 +84,15 @@ import '@/components/ui/Input/Input.scss';
         dialogCloseBtn.addEventListener('click', () => {
             // @ts-ignore
             dialogElem.close();
+            document.body.style.overflow = 'auto';
         });
     }
 </script>
 
 <style lang="scss">
     .question {
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: auto;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -102,6 +115,7 @@ import '@/components/ui/Input/Input.scss';
             transform: unset;
             height: 100%;
             max-width: unset;
+            min-height: 100% !important;
         }
 
         &__top {
@@ -144,6 +158,9 @@ import '@/components/ui/Input/Input.scss';
             display: flex;
             flex-direction: column;
             gap: 16px;
+            @media (max-width: 768px) {
+                gap: 12px;
+            }
         }
 
         &__radio-title {
@@ -196,6 +213,19 @@ import '@/components/ui/Input/Input.scss';
             background-color: $color-accent-btn;
         }
 
+        &__error {
+            font-size: 13px;
+            color: #f35151;
+            letter-spacing: 0.045em;
+            font-weight: 300;
+
+            display: none;
+        }
+
+        &__error--active {
+            display: block;
+        }
+
         &__policy {
             display: flex;
             align-items: center;
@@ -231,6 +261,56 @@ import '@/components/ui/Input/Input.scss';
             gap: 8px;
             align-items: center;
             margin-left: auto;
+
+            @media (max-width: 768px) {
+                flex-direction: row-reverse;
+                margin-left: unset;
+                margin-right: auto;
+            }
+        }
+
+        &__confirm {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            visibility: hidden;
+            opacity: 0;
+
+            padding: 12px 20px;
+
+            background-color: $color-dark;
+            @media (max-width: 768px) {
+                bottom: unset;
+                top: 78px;
+                width: 237px;
+
+            }
+        }
+
+        &__confirm--active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        &__confirm-text {
+            font-size: 15px;
+            line-height: 1.3;
+            font-weight: 300;
+            color: $color-light;
+            flex-shrink: 0;
+        }
+
+        &__confirm-btn {
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 </style>

@@ -38,6 +38,7 @@
     }
 }
 
-.input-base--error {
+.input-base--error input,
+.input-base--error textarea {
     border-color: #f35151;
 }
