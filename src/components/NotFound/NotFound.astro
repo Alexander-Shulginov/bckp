@@ -1,7 +1,7 @@
 ---
 import '@/styles/main.scss';
-import Footer from './Footer/Footer.astro';
-import Header from './Header/Header.astro';
+import './NotFound.scss'
+import Header from '@/layouts/Header/Header.astro';
 ---
 
 <!doctype html>
@@ -17,11 +17,14 @@ import Header from './Header/Header.astro';
         <title>Shopi</title>
     </head>
     <body>
-        <Header />
-        <main class="main">
-            <slot />
-        </main>
-        <Footer />
-        <script src="../../src/scripts/main.js"></script>
+        <div class="notFound">
+            <Header />
+            <img class="notFound__img" src="img/404/404.webp" alt="404 placeholder" width="1440" height="775" />
+            <div class="notFound__inner">
+                <h1 class="notFound__title">404</h1>
+                <p class="notFound__text">Такой страницы не существует</p>
+                <a href="/" class="notFound__link btn btn--black">На главную</a>
+            </div>
+        </div>
     </body>
 </html>
