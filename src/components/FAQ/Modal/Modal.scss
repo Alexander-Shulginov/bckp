@@ -1,0 +1,222 @@
+.question {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+
+    border: none;
+    margin: unset;
+    background-color: $color-light;
+    padding: 16px 20px;
+
+    max-width: 517px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: unset;
+        height: 100%;
+        max-width: unset;
+        min-height: 100% !important;
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__close {
+        background-color: transparent;
+        margin-left: auto;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2px;
+
+        path {
+            transition: stroke 0.2s ease-in-out;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                path {
+                    stroke: #3f404b;
+                }
+            }
+        }
+    }
+
+    &__title {
+        font-family: $second-font;
+        font-size: 24px;
+        font-weight: 400;
+
+        margin-bottom: 16px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @media (max-width: 768px) {
+            gap: 12px;
+        }
+    }
+
+    &__radio-title {
+        font-size: 14px;
+        line-height: 1.2;
+        margin-bottom: 8px;
+    }
+
+    &__radio-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__radio-elem {
+        position: relative;
+        width: 100%;
+    }
+
+    &__radio-label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        text-wrap: nowrap;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+
+        pointer-events: none;
+
+        font-size: 14px;
+        line-height: 1.2;
+    }
+
+    &__radio-input {
+        appearance: none;
+        height: 34px;
+        width: 100%;
+        display: block;
+        border: 1px solid #c7c7c7;
+        cursor: pointer;
+    }
+
+    &__radio-input:checked + .question__radio-label {
+        background-color: $color-accent-btn;
+    }
+
+    &__error {
+        font-size: 13px;
+        color: #f35151;
+        letter-spacing: 0.045em;
+        font-weight: 300;
+
+        display: none;
+    }
+
+    &__error--active {
+        display: block;
+    }
+
+    &__policy {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__policy-checkbox {
+        width: 16px;
+        height: 16px;
+        accent-color: $color-accent-btn;
+    }
+
+    &__policy-text {
+        font-size: 14px;
+        line-height: 1.2;
+
+        a {
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+        }
+    }
+
+    &__separator {
+        position: relative;
+        width: 200%;
+        left: -50%;
+        height: 2px;
+        background-color: #dbdbdb;
+    }
+
+    &__btns {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-left: auto;
+
+        @media (max-width: 768px) {
+            flex-direction: row-reverse;
+            margin-left: unset;
+            margin-right: auto;
+        }
+    }
+
+    &__confirm {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        visibility: hidden;
+        opacity: 0;
+
+        padding: 12px 20px;
+
+        background-color: $color-dark;
+        @media (max-width: 768px) {
+            bottom: unset;
+            top: 78px;
+            width: 237px;
+        }
+    }
+
+    &__confirm--active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__confirm-text {
+        font-size: 15px;
+        line-height: 1.3;
+        font-weight: 300;
+        color: $color-light;
+        flex-shrink: 0;
+    }
+
+    &__confirm-btn {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

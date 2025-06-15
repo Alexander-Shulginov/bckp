@@ -1,4 +1,4 @@
-.search {
+.input-search {
     position: relative;
 
     &__input {
@@ -24,7 +24,7 @@
         border-bottom-color: $color-dark;
     }
 
-    &__input:focus-visible ~ .search__clear {
+    &__input:focus-visible ~ .input-search__clear {
         visibility: visible;
         opacity: 1;
     }
