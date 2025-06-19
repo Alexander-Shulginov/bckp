@@ -1,0 +1,313 @@
+---
+import './Register.scss';
+import '@/components/ui/Input/Input.scss';
+---
+
+<section class="register">
+    <div class="register__container">
+        <div class="register__top">
+            <h1 class="register__title register__title--active">Войти</h1>
+            <h2 class="register__title">Зарегистрироваться</h2>
+        </div>
+        <div class="register__body">
+            <form action="#" class="register__form">
+                <div class="register__input input-base">
+                    <label for="signin-mail">E-mail</label>
+                    <input type="email" name="signin-mail-field" id="signin-mail" />
+                </div>
+                <div class="register__input input-base">
+                    <label for="signin-password">Пароль</label>
+                    <input type="password" name="signin-password-field" id="signin-password" />
+                </div>
+                <p class="register__error">Неверный e-mail или пароль</p>
+                <button class="register__submit btn btn--accent" type="submit">Войти</button>
+                <a class="register__reset" href="#">Восстановить пароль</a>
+            </form>
+
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <form action="#" class="register__form">
+                <div class="register__input input-base">
+                    <label for="signup-mail">E-mail</label>
+                    <input type="email" name="signup-mail-field" id="signup-mail" />
+                </div>
+                <div class="register__input input-base">
+                    <label for="signup-password">Пароль</label>
+                    <input type="password" name="signup-password-field" id="signup-password" />
+                </div>
+                <div class="register__input input-base">
+                    <label for="signup-password-repeat">Повторите пароль</label>
+                    <input type="password" name="signup-password-repeat-field" id="signup-password-repeat" />
+                </div>
+                <p class="register__error">Пользователь с этой почтой уже существует</p>
+                <button class="register__submit btn btn--accent" type="submit">Зарегистрироваться</button>
+            </form>
+
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <div class="register__picture">
+                <img class="register__img" src="img/Register/mail-confirm.webp" alt="Light fur coat " width="252" height="252" />
+            </div>
+
+            <div class="register__confirm">
+                <h3 class="register__title">Подтвердите регистрацию по&nbsp;ссылке в&nbsp;письме</h3>
+                <p class="register__text">
+                    Письмо отправили на почту
+                    <span>d.sokolova@gmail.com</span>
+                </p>
+                <button class="register__resend" type="button">Отправить еще раз</button>
+            </div>
+
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <div class="register__password-reset">
+                <div class="register__wrap">
+                    <h3 class="register__title">Восстановление пароля</h3>
+                    <p class="register__text-gray">Отправим ссылку для восстановления пароля на&nbsp;почту.</p>
+                </div>
+
+                <form action="#" class="register__form">
+                    <div class="register__input input-base">
+                        <label for="reset-mail">E-mail</label>
+                        <input type="email" name="reset-mail-field" id="reset-mail" />
+                    </div>
+                    <button class="register__submit btn btn--accent" type="submit">Отправить ссылку</button>
+                </form>
+            </div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div class="register__password-link">
+            <div class="register__picture">
+                <img class="register__img" src="img/Register/reset.webp" alt="Gray fur coat" width="224" height="326" />
+            </div>
+            <h3 class="register__title">Ссылка отправлена</h3>
+            <p class="register__text">Ссылка для восстановления пароля отправлена на d.sokolova@gmail.com</p>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div class="register__new">
+            <h3 class="register__top register__title">Придумайте новый пароль</h3>
+            <form action="#" class="register__form">
+                <div class="register__input input-base">
+                    <label for="new-password">Новый пароль</label>
+                    <input type="password" name="new-password-field" id="new-password" />
+                </div>
+                <div class="register__input input-base">
+                    <label for="new-password-repeat">Повторите пароль</label>
+                    <input type="password" name="new-password-repeat-field" id="new-password-repeat" />
+                </div>
+                <p class="register__error">Пароли не совпадают</p>
+                <button class="register__submit btn btn--accent" type="submit">Сохранить</button>
+                <div class="register__tooltip">
+                    <input class="register__decor" checked type="checkbox" name="tooltip" id="tooltip-checkbox" aria-label="Checkbox tooltip" />
+                    <span>Пароль изменен</span>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.75 0.75L6 6M6 6L11.25 11.25M6 6L11.25 0.75M6 6L0.75 11.25" stroke="white" stroke-width="1.3"></path>
+                    </svg>
+                </div>
+            </form>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div class="register__exp">
+            <div class="register__picture">
+                <img class="register__img" src="img/Register/socks.webp" alt="Gray fur coat" width="224" height="326" />
+            </div>
+            <h4 class="register__title register__exp-title">Ссылка истекла</h4>
+            <button class="btn btn--accent" type="button">Отправить повторно</button>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    .register {
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+        @media (max-width: 768px) {
+            padding-bottom: 56px;
+        }
+        &__container {
+            max-width: 536px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        &__top {
+            margin-bottom: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 20px;
+            }
+        }
+
+        &__title {
+            font-family: $second-font;
+            font-size: 36px;
+            line-height: 1.1;
+            font-weight: 400;
+            text-align: center;
+
+            cursor: pointer;
+
+            @media (max-width: 768px) {
+                font-size: 24px;
+            }
+
+            @media (max-width: 350px) {
+                font-size: 20px;
+            }
+        }
+
+        &__title--active {
+            color: #8a8a8a;
+        }
+
+        &__form {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            @media (max-width: 768px) {
+                max-width: unset;
+            }
+        }
+
+        &__error {
+            font-size: 13px;
+            color: #f35151;
+            font-weight: 300;
+            margin-top: -12px;
+
+            display: none;
+        }
+
+        &__error--active {
+            display: block;
+        }
+
+        &__reset {
+            margin-top: 16px;
+            font-size: 13px;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+        }
+
+        &__confirm {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &__picture {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        &__img {
+            object-fit: cover;
+        }
+
+        &__text {
+            font-size: 15px;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        &__text-gray {
+            font-weight: 300;
+            color: #353638;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        &__resend {
+            background-color: transparent;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+            display: block;
+            margin: 0 auto;
+            font-size: 15px;
+            line-height: 1.3;
+            font-family: $main-font;
+            cursor: pointer;
+        }
+
+        &__password-reset {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+        }
+
+        &__password-link {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &__tooltip {
+            background-color: $color-dark;
+            font-size: 15px;
+            line-height: 1.3;
+            font-weight: 300;
+            color: $color-light;
+            max-width: 220px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 12px 20px;
+        }
+
+        &__decor {
+            accent-color: $color-accent;
+            pointer-events: none;
+        }
+
+        &__exp {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+
+            button {
+                max-width: 193px;
+                margin: 0 auto;
+            }
+        }
+
+        &__exp-title {
+            color: #f35151;
+        }
+    }
+</style>
