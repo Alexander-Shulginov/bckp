@@ -2,6 +2,7 @@
 import '@/styles/main.scss';
 import Footer from './Footer/Footer.astro';
 import Header from './Header/Header.astro';
+import MobileMenu from './MobileMenu/MobileMenu.astro';
 ---
 
 <!doctype html>
@@ -32,6 +33,7 @@ import Header from './Header/Header.astro';
         <Header />
         <main class="main">
             <slot />
+            <MobileMenu />
         </main>
         <Footer />
         <script src="../../src/scripts/main.js"></script>

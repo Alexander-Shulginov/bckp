@@ -1,0 +1,25 @@
+.menu-mobile {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    justify-content: space-around;
+    z-index: 10;
+
+    border-top: 1px solid #e1e2ea;
+    border-bottom: 1px solid #e1e2ea;
+
+    background-color: $color-light;
+    padding: 8px;
+
+    @media (max-width: 1024px) {
+        display: flex;
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
